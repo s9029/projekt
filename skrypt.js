@@ -17,6 +17,12 @@ $(document).ready(function () {
         console.log('connected!');
     });
 
+    socket.on('wiadom', function (msg){
+        var data = msg.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        console.log("dostalem" + data);
+        //$('body').text(data);
+    });
+
     socket.on('nieGra', function (msg) {
         var data = msg.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
         $('body').text(data);
@@ -67,7 +73,7 @@ $(document).ready(function () {
 
     });
 
-    socket.on('dupa', function(msg){
+    socket.on('pudlo', function(msg){
         console.log("x = " + msg.x + ", y = " + msg.y + ", traf = " + msg.traf);
         var id = msg.x+"-"+msg.y;
         $('#myShots div').each(function(value, key){

@@ -128,7 +128,7 @@ socket.on('connection', function (client) {
     client.on('shot', function(msg){
         if(this===players[0]){
             if(tab2[msg.x][msg.y]===1){
-                client.emit('dupa', {x: msg.x, y: msg.y, traf: 1});
+                client.emit('pudlo', {x: msg.x, y: msg.y, traf: 1});
                 trafionePlayer1++;
                 trafiony = 1;
                 if(trafionePlayer1===14 || trafionePlayer2===14){
@@ -146,7 +146,7 @@ socket.on('connection', function (client) {
             players[1].emit('odpShot', {'x' : msg.x, 'y' : msg.y, 'status' : 1, 'trafiony' : trafiony});
         }else{
             if(tab1[msg.x][msg.y]===1){
-                client.emit('dupa', {x: msg.x, y: msg.y, traf: 1});
+                client.emit('pudlo', {x: msg.x, y: msg.y, traf: 1});
                 trafionePlayer2++;
                 trafiony = 1;
                 if(trafionePlayer1===14 || trafionePlayer2===14){
