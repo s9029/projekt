@@ -113,8 +113,6 @@ socket.on('connection', function (client) {
         client.on('setNick', function(nickname){
             users[nickname]=nickname;
             client.username = nickname;
-            // console.log("Gracz I: " + players[0].id);
-            // console.log("Gracz II: " + players[1]);
             
             if(amountClients==2){
                 players[1].emit('twojaTablica', {'statki' : tab2, 'rival' : players[0].username, 'status' : 1});
