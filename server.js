@@ -66,7 +66,7 @@ var socket = io.listen(server);
 
  */
 
- var users = {},
+ var users = {};
 
     var tab1 = [
         [1, 1, 1, 1, 1, 0, 0, 0],
